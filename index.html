@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Netfin Blog</title>
+    <!-- SEO Meta Tags-->
+    <meta
+      name="description"
+      content="Around - Multipurpose Bootstrap Template"
+    />
+    <meta
+      name="keywords"
+      content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative"
+    />
+    <meta name="author" content="Createx Studio" />
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg" />
+    <meta name="msapplication-TileColor" content="#766df4" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.75rem;
+        vertical-align: text-bottom;
+        border: 0.15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      * {
+        font-family: "Oswald", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+    </script>
+    <!-- Vendor Styles-->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="vendor/simplebar/dist/simplebar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="vendor/tiny-slider/dist/tiny-slider.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="vendor/lightgallery.js/dist/css/lightgallery.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Ponomar&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="css/theme.min.css" />
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+    <main class="page-wrapper">
+      <header
+        class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky"
+        data-scroll-header
+        data-fixed-element
+        id="navbar-example2"
+      >
+        <div class="container px-0 px-xl-3">
+          <button
+            class="navbar-toggler ms-n2 me-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#primaryMenu"
+          >
+            <span class="navbar-toggler-icon"></span></button
+          ><a
+            class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4"
+            href="index.html"
+            ><img
+              class="d-none d-lg-block"
+              src="img/Logo Netfin .png"
+              alt="Around"
+              width="100" /><img
+              class="d-lg-none"
+              src="img/Logo Netfin .png"
+              alt="Around"
+              width="58"
+          /></a>
+          <div class="d-flex align-items-center order-lg-3 ms-lg-auto">
+            <a class="btn btn-primary ms-grid-gutter">Contact US</a>
+          </div>
+          <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+            <div class="offcanvas-header navbar-shadow">
+              <h5 class="mt-1 mb-0">Menu</h5>
+              <button
+                class="btn-close lead"
+                type="button"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Menu-->
+              <nav id="navbar-example2">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown dropdown-mega active">
+                    <a class="nav-link dropdown-toggle" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#pricing">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#paket">Paket</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#keuntungan">Keuntungan</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#client">Our Client</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#traffic">Traffic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#optimasi">Blog</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Page content-->
+      <div class="container bg-faded-primary rounded-3 p-4 mb-4">
+        <div class="p-md-3 text-center">
+          <h1 class="display-3 text-primary">
+            Website Murah dan SEO <br />
+            <span class="fw-normal fs-2">(Sesuai Keyword)</span>
+          </h1>
+          <p class="fs-4 text-primary">
+            Optimasi SEO dengan Domain dan Hosting Terjangkau
+          </p>
+        </div>
+        <div class="row py-5">
+          <div class="text-center col" aria-hidden="true" tabindex="-1">
+            <img class="mb-3" src="img/Web.png" alt="24/7 Access" width="54" />
+            <div class="text-body fs-4">Website</div>
+          </div>
+          <div class="text-center col" aria-hidden="true" tabindex="-1">
+            <img class="mb-3" src="img/Analysis.png" alt="Analyst" width="54" />
+            <div class="text-body fs-4">Analyst</div>
+          </div>
+          <div class="text-center col" aria-hidden="true" tabindex="-1">
+            <img class="mb-3" src="img/content.png" alt="Parking" width="54" />
+            <div class="text-body fs-4">Content</div>
+          </div>
+          <div class="text-center col" aria-hidden="true" tabindex="-1">
+            <img
+              class="mb-3"
+              src="img/Keywords.png"
+              alt="Total Area"
+              width="54"
+            />
+            <div class="text-body fs-4">Keywords</div>
+          </div>
+          <div class="text-center col" aria-hidden="true" tabindex="-1">
+            <img
+              class="mb-3"
+              src="img/Social Media.png"
+              alt="Showers"
+              width="54"
+            />
+            <div class="text-body fs-4">Social Media</div>
+          </div>
+          <div class="text-center col" aria-hidden="true" tabindex="-1">
+            <img
+              class="mb-3"
+              src="img/Ranking.png"
+              alt="24/7 Access"
+              width="54"
+            />
+            <div class="text-body fs-4">Ranking</div>
+          </div>
+          <div class="text-center col" aria-hidden="true" tabindex="-1">
+            <img
+              class="mb-3"
+              src="img/optimization.png"
+              alt="3 Full Floors"
+              width="54"
+            />
+            <div class="text-body fs-4">Optimization</div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <!-- Content-->
+          <div class="col-lg-9 py-4 mb-2 mb-sm-0 pb-sm-5">
+            <div class="pb-4" style="max-width: 38rem">
+              <nav aria-label="breadcrumb">
+                <ol class="py-1 my-2 breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                  <li class="breadcrumb-item"><a href="#">Category</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Single post no sidebar
+                  </li>
+                </ol>
+              </nav>
+              <h1>Designers should always keep their users in mind</h1>
+            </div>
+            <!-- Post author + Sharing-->
+            <div
+              class="row position-relative g-0 align-items-center border-top border-bottom mb-4"
+            >
+              <div class="col-md-6 py-3 pe-md-3">
+                <div
+                  class="d-flex align-items-center justify-content-center justify-content-md-start"
+                >
+                  <div class="d-flex align-items-center me-grid-gutter">
+                    <a class="d-block" href="#"
+                      ><img
+                        class="rounded-circle me-1"
+                        src="img/blog/single/author.jpg"
+                        alt="Emma Brown"
+                        width="64"
+                    /></a>
+                    <div class="ps-2">
+                      <h6 class="nav-heading mb-1">
+                        <a href="#">Emma Brown</a>
+                      </h6>
+                      <div class="text-nowrap">
+                        <div class="meta-link fs-xs">
+                          <i class="ai-calendar me-1 align-vertical"></i
+                          >&nbsp;Feb 19
+                        </div>
+                        <span class="meta-divider"></span
+                        ><a class="meta-link fs-xs" href="#comments" data-scroll
+                          ><i class="ai-message-square me-1 align-vertical"></i
+                          >&nbsp;3</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <a class="btn btn-translucent-primary btn-sm" href="#"
+                    >Follow</a
+                  >
+                </div>
+              </div>
+              <div
+                class="d-none d-md-block position-absolute border-start h-100"
+                style="top: 0; left: 50%; width: 1px"
+              ></div>
+              <div class="col-md-6 ps-md-3 py-3">
+                <div
+                  class="d-flex align-items-center justify-content-center justify-content-md-end"
+                >
+                  <h6 class="text-nowrap my-2 me-3">Share post:</h6>
+                  <a
+                    class="btn-social bs-outline bs-facebook ms-2 my-2"
+                    href="#"
+                    ><i class="ai-facebook"></i></a
+                  ><a
+                    class="btn-social bs-outline bs-twitter ms-2 my-2"
+                    href="#"
+                    ><i class="ai-twitter"></i></a
+                  ><a class="btn-social bs-outline bs-google ms-2 my-2" href="#"
+                    ><i class="ai-google"></i></a
+                  ><a class="btn-social bs-outline bs-email ms-2 my-2" href="#"
+                    ><i class="ai-mail"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- Post content-->
+            <p class="py-3">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+              est, qui dolorem ipsum.
+            </p>
+            <h2 class="h3 pt-2 pb-4">Some real life examples</h2>
+            <div class="tns-carousel-wrapper gallery">
+              <div
+                class="tns-carousel-inner"
+                data-carousel-options='{"items": 2, "controls": false, "responsive": {"0":{"items":1, "gutter": 20},"500":{"items":2, "gutter": 20}, "700":{"items":2, "gutter": 30}}}'
+              >
+                <div>
+                  <a
+                    class="gallery-item rounded-3"
+                    href="img/blog/single/01.jpg"
+                    data-sub-html='&lt;h6 class="fs-sm text-light"&gt;Gallery image caption #1&lt;/h6&gt;'
+                    ><img
+                      src="img/blog/single/th01.jpg"
+                      alt="Gallery thumbnail"
+                    /><span class="gallery-caption"
+                      >Gallery image caption #1</span
+                    ></a
+                  >
+                </div>
+                <div>
+                  <a
+                    class="gallery-item rounded-3"
+                    href="img/blog/single/02.jpg"
+                    data-sub-html='&lt;h6 class="fs-sm text-light"&gt;Gallery image caption #2&lt;/h6&gt;'
+                    ><img
+                      src="img/blog/single/th02.jpg"
+                      alt="Gallery thumbnail"
+                    /><span class="gallery-caption"
+                      >Gallery image caption #2</span
+                    ></a
+                  >
+                </div>
+                <div>
+                  <a
+                    class="gallery-item rounded-3"
+                    href="img/blog/single/03.jpg"
+                    data-sub-html='&lt;h6 class="fs-sm text-light"&gt;Gallery image caption #3&lt;/h6&gt;'
+                    ><img
+                      src="img/blog/single/th03.jpg"
+                      alt="Gallery thumbnail"
+                    /><span class="gallery-caption"
+                      >Gallery image caption #3</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="py-4">
+              <p class="pt-3">
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque corrupti quos
+                dolores et quas molestias excepturi sint occaecati cupiditate
+                non provident, similique sunt in culpa qui officia deserunt
+                mollitia animi, id est laborum et dolorum fuga. Et harum quidem
+                rerum facilis est et expedita distinctio. Nam libero tempore,
+                cum soluta nobis est eligendi optio cumque nihil impedit quo
+                minus id quod maxime placeat facere possimus, omnis voluptas
+                assumenda est, omnis dolor repellendus. Temporibus autem
+                quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+                eveniet ut et voluptates repudiandae sint et molestiae non
+                recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+                ut aut reiciendis voluptatibus maiores alias consequatur aut
+                perferendis doloribus asperiores repellat.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+
+            <p class="py-3">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+              est, qui dolorem ipsum.
+            </p>
+
+            <!-- Related posts (carousel)-->
+            <div class="pb-4 pb-md-5">
+              <h2 class="h3 pb-4">Related posts</h2>
+              <div class="tns-carousel-wrapper">
+                <div
+                  class="tns-carousel-inner"
+                  data-carousel-options='{"items": 2, "controls": false, "autoHeight": true, "responsive": {"0":{"items":1, "gutter": 16},"500":{"items":2, "gutter": 16},"850":{"items":3, "gutter": 16}, "1100":{"items":3, "gutter": 23}}}'
+                >
+                  <!-- Article-->
+                  <div class="pb-2">
+                    <article class="card card-hover mx-1">
+                      <a class="card-img-top" href="#"
+                        ><img src="img/blog/02.jpg" alt="Post thumbnail"
+                      /></a>
+                      <div class="card-body">
+                        <a class="meta-link fs-sm mb-2" href="#">Technology</a>
+                        <h2 class="h5 nav-heading mb-4">
+                          <a href="#">How technology affect our decisions</a>
+                        </h2>
+                        <a
+                          class="d-flex meta-link fs-sm align-items-center pt-3"
+                          href="#"
+                          ><img
+                            class="rounded-circle"
+                            src="img/blog/avatar/03.jpg"
+                            alt="Jessica Miller"
+                            width="36"
+                          />
+                          <div class="ps-2 ms-1 mt-n1">
+                            by<span class="fw-semibold ms-1"
+                              >Jessica Miller</span
+                            >
+                          </div></a
+                        >
+                        <div class="mt-3 text-end text-nowrap">
+                          <a class="meta-link fs-xs" href="#"
+                            ><i class="ai-message-square me-1"></i>&nbsp;3</a
+                          ><span class="meta-divider"></span
+                          ><a class="meta-link fs-xs" href="#"
+                            ><i class="ai-calendar me-1 mt-n1"></i>&nbsp;Feb
+                            4</a
+                          >
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Article-->
+                  <div class="pb-2">
+                    <article class="card card-hover mx-1">
+                      <a class="card-img-top" href="#"
+                        ><img src="img/blog/03.jpg" alt="Post thumbnail"
+                      /></a>
+                      <div class="card-body">
+                        <a class="meta-link fs-sm mb-2" href="#">Business</a>
+                        <h2 class="h5 nav-heading mb-4">
+                          <a href="#"
+                            >Open space - new trend in office design</a
+                          >
+                        </h2>
+                        <a
+                          class="d-flex meta-link fs-sm align-items-center pt-3"
+                          href="#"
+                          ><img
+                            class="rounded-circle"
+                            src="img/blog/avatar/05.jpg"
+                            alt="Daniel Adams"
+                            width="36"
+                          />
+                          <div class="ps-2 ms-1 mt-n1">
+                            by<span class="fw-semibold ms-1">Daniel Adams</span>
+                          </div></a
+                        >
+                        <div class="mt-3 text-end text-nowrap">
+                          <a class="meta-link fs-xs" href="#"
+                            ><i class="ai-message-square me-1"></i>&nbsp;12</a
+                          ><span class="meta-divider"></span
+                          ><a class="meta-link fs-xs" href="#"
+                            ><i class="ai-calendar me-1 mt-n1"></i>&nbsp;Jan
+                            10</a
+                          >
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Article-->
+                  <div class="pb-2">
+                    <article class="card card-hover mx-1">
+                      <a class="card-img-top" href="#"
+                        ><img src="img/blog/06.jpg" alt="Post thumbnail"
+                      /></a>
+                      <div class="card-body">
+                        <a class="meta-link fs-sm mb-2" href="#">Business</a>
+                        <h2 class="h5 nav-heading mb-4">
+                          <a href="#"
+                            >Business offices of Fortune 500 companies</a
+                          >
+                        </h2>
+                        <a
+                          class="d-flex meta-link fs-sm align-items-center pt-3"
+                          href="#"
+                          ><img
+                            class="rounded-circle"
+                            src="img/blog/avatar/06.jpg"
+                            alt="Barbara Palson"
+                            width="36"
+                          />
+                          <div class="ps-2 ms-1 mt-n1">
+                            by<span class="fw-semibold ms-1"
+                              >Barbara Palson</span
+                            >
+                          </div></a
+                        >
+                        <div class="mt-3 text-end text-nowrap">
+                          <a class="meta-link fs-xs" href="#"
+                            ><i class="ai-message-square me-1"></i>&nbsp;5</a
+                          ><span class="meta-divider"></span
+                          ><a class="meta-link fs-xs" href="#"
+                            ><i class="ai-calendar me-1 mt-n1"></i>&nbsp;Nov
+                            20</a
+                          >
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Article-->
+                  <div class="pb-2">
+                    <article class="card card-hover mx-1">
+                      <a class="card-img-top" href="#"
+                        ><img src="img/blog/05.jpg" alt="Post thumbnail"
+                      /></a>
+                      <div class="card-body">
+                        <a class="meta-link fs-sm mb-2" href="#">Technology</a>
+                        <h2 class="h5 nav-heading mb-4">
+                          <a href="#"
+                            >Payments made easy. New tech in E-commerce</a
+                          >
+                        </h2>
+                        <a
+                          class="d-flex meta-link fs-sm align-items-center pt-3"
+                          href="#"
+                          ><img
+                            class="rounded-circle"
+                            src="img/blog/avatar/02.jpg"
+                            alt="Charlie Welch"
+                            width="36"
+                          />
+                          <div class="ps-2 ms-1 mt-n1">
+                            by<span class="fw-semibold ms-1"
+                              >Charlie Welch</span
+                            >
+                          </div></a
+                        >
+                        <div class="mt-3 text-end text-nowrap">
+                          <a class="meta-link fs-xs" href="#"
+                            ><i class="ai-message-square me-1"></i>&nbsp;17</a
+                          ><span class="meta-divider"></span
+                          ><a class="meta-link fs-xs" href="#"
+                            ><i class="ai-calendar me-1 mt-n1"></i>&nbsp;Nov
+                            08</a
+                          >
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section
+        class="bg-secondary bg-size-cover py-5 py-md-6"
+        style="background-image: url(img/demo/business-consulting/cta-bg.png)"
+      >
+        <div class="container py-3 py-md-0">
+          <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6 text-center text-md-start">
+              <h2 class="mb-4 pb-3 pb-md-0 mb-md-0">
+                Cari Jasa Pembuatan Website dan Domain Murah?
+              </h2>
+            </div>
+            <div class="col-lg-7 col-md-6 d-flex justify-content-end">
+              <button class="btn btn-primary" type="submit">
+                Dapetin Jasa Website Murah Disini
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer-->
+    <footer class="footer bg-darker py-4">
+      <div
+        class="container d-md-flex align-items-center justify-content-between py-2 text-center text-md-start"
+      >
+        <ul class="list-inline fs-sm mb-3 mb-md-0 order-md-2">
+          <li class="list-inline-item my-1">
+            <a class="nav-link-style nav-link-light" href="#">Support</a>
+          </li>
+          <li class="list-inline-item my-1">
+            <a class="nav-link-style nav-link-light" href="#">Contacts</a>
+          </li>
+          <li class="list-inline-item my-1">
+            <a class="nav-link-style nav-link-light" href="#"
+              >Terms &amp; Conditions</a
+            >
+          </li>
+        </ul>
+        <p class="fs-sm mb-0 me-3 order-md-1">
+          <span class="text-light opacity-50 me-1"
+            >© All rights reserved. Made by</span
+          ><a
+            class="nav-link-style nav-link-light"
+            href="/"
+            target="_blank"
+            rel="noopener"
+            >Netfin</a
+          >
+        </p>
+      </div>
+    </footer>
+    <!-- Back to top button--><a
+      class="btn-scroll-top"
+      href="#top"
+      data-scroll
+      data-fixed-element
+      ><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span
+      ><i class="btn-scroll-top-icon ai-arrow-up"> </i
+    ></a>
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+    <script src="vendor/lg-fullscreen.js/dist/lg-fullscreen.min.js"></script>
+    <script src="vendor/lg-zoom.js/dist/lg-zoom.min.js"></script>
+    <script src="vendor/lg-video.js/dist/lg-video.min.js"></script>
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
+  </body>
+</html>
